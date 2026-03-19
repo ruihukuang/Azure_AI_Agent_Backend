@@ -1,0 +1,25 @@
+# Web Framework
+fastapi
+uvicorn
+
+# Database & Vectors
+sqlalchemy
+psycopg2-binary
+pgvector
+
+# AI & Ingestion
+azure-ai-projects
+azure-identity
+langchain-text-splitters
+python-dotenv
+
+requests
+semantic-kernel
+
+urllib3 
+chardet 
+charset-normalizer
+
+
+
+# Python version has to be lower than 3.14 I used 3.12 in the virtual env
