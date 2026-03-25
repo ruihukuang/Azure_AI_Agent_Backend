@@ -2,7 +2,7 @@
 
 
 ## Purpose
-An RAG-based application designed for high-accuracy product queries with strict hallucination controls
+This app uses a Retrieval-Augmented Generation (RAG) framework to provide pinpoint accuracy on product details. To keep information reliable, it only draws from the products folder; if a question isn't product-related, the app will simply let you know it doesn't have the answer.
 
 ## Main Techology 
 
