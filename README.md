@@ -8,7 +8,7 @@ This app uses a Retrieval-Augmented Generation (RAG) framework to provide pinpoi
 
 Refined RAG Architecture & Workflow
 
-1. Scalable Foundation and Async Handling
+### 1. Scalable Foundation and Async Handling
 The application is built on FastAPI and served via Uvicorn, optimized for high-concurrency environments. It utilizes the AsyncAzureOpenAI client to ensure that all network calls to Azure—both for generating embeddings and fetching chat completions—are non-blocking. This allows the server to handle multiple user requests simultaneously without waiting for the LLM to respond.
 
 2. High-Performance Retrieval with HNSW
