@@ -11,18 +11,21 @@ Refined RAG Architecture & Workflow
 ### 1. Scalable Foundation and Async Handling
 The application is built on FastAPI and served via Uvicorn, optimized for high-concurrency environments. It utilizes the AsyncAzureOpenAI client to ensure that all network calls to Azure—both for generating embeddings and fetching chat completions—are non-blocking. This allows the server to handle multiple user requests simultaneously without waiting for the LLM to respond.
 
-2. High-Performance Retrieval with HNSW
+### 2. High-Performance Retrieval with HNSW
 Product documentation is processed by splitting files into semantic chunks and storing them in a PostgreSQL database. To ensure "blazing fast" retrieval as data grows, a Hierarchical Navigable Small World (HNSW) index is applied to the vector column. Unlike standard indexes, HNSW builds a multi-layered graph that allows the system to find the most relevant product information in sub-millisecond time, trading a small amount of memory for significant gains in search speed and accuracy.
 
-3. Consolidating the Retrieve Tool
+### 3. Consolidating the Retrieve Tool
 A custom Retrieve Tool acts as the bridge between the user's intent and the technical backend. This single tool call encapsulates two critical steps: first, it uses the Embedding Tool to convert the user's natural language question into a 1536-dimensional vector via text-embedding-3-small. Second, it immediately passes that vector to the Postgres Tool, which executes a pgvector similarity search using the HNSW index to pull the most contextually relevant text chunks.
 
-4. Orchestration and Logging via Semantic Kernel
+### 4. Orchestration and Logging via Semantic Kernel
 Semantic Kernel serves as the central brain, orchestrating the interaction between the LLM and the Retrieve Tool. It manages the flow of data and provides an observability layer for the entire process. By utilizing the kernel's ability to coordinate agents and tools, the system ensures that every prompt sent to the LLM is grounded in fact, significantly reducing the risk of hallucination while maintaining high reponse accuracy.
 
 To ensure a production-ready interface, Pydantic is used to restructure and validate the final output format. Rather than returning unstructured text, the system maps the LLM's response into a strict schema, enforcing consistent data types for fields like answer content, file citations, and confidence scores.
 
-5. To optimize operational efficiency, the application implements a PostgreSQL Response Caching layer using exact-match logic. When a query is submitted, the system checks for existing answers, but grants user agency: users can choose to retrieve a stored response or generate a fresh one.
+### 5. PostgreSQL Response Caching layer
+To optimize operational efficiency, the application implements a PostgreSQL Response Caching layer using exact-match logic. 
+
+When a query is submitted, the system checks for existing answers, but grants user agency: users can choose to retrieve a stored response or generate a fresh one.
 
 Selecting a fresh response triggers a new Azure OpenAI call, which then updates the database for future reference. This "cache-first" approach significantly reduces latency and token consumption, preserving the API quota for unique queries while providing a cost-effective, tailored user experience.
 
