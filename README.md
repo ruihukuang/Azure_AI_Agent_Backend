@@ -25,7 +25,7 @@ To ensure a production-ready interface, Pydantic is used to restructure and vali
 ### 5. PostgreSQL Response Caching layer
 To optimize operational efficiency, the application implements a PostgreSQL Response Caching layer using exact-match logic. 
 
-When a query is submitted, the system checks for existing answers, but grants user agency: users can choose to retrieve a stored response or generate a fresh one.
+When a query is submitted, the system checks for existing questions and their answers, but grants user agency: users can choose to retrieve a stored response or generate a fresh one.
 
 Selecting a fresh response triggers a new Azure OpenAI call, which then updates the database for future reference. This "cache-first" approach significantly reduces latency and token consumption, preserving the API quota for unique queries while providing a cost-effective, tailored user experience.
 
