@@ -4,6 +4,10 @@
 ## Purpose
 This app uses a Retrieval-Augmented Generation (RAG) framework to provide pinpoint accuracy on product details. To keep information reliable, it only draws from the products folder; if a question isn't product-related, the app will simply let you know it doesn't have the answer.
 
+## Execution steps
+1 Knowledge Base Ingestion & Vector Indexing
+
+
 ## Main Techology 
 
 Refined RAG Architecture & Workflow
@@ -24,6 +28,11 @@ A custom Retrieve Tool acts as the bridge between the user's intent and the tech
 Semantic Kernel serves as the central brain, orchestrating the interaction between the LLM and the Retrieve Tool. It manages the flow of data and provides an observability layer for the entire process. By utilizing the kernel's ability to coordinate agents and tools, the system ensures that every prompt sent to the LLM is grounded in fact, significantly reducing the risk of hallucination while maintaining high reponse accuracy.
 
 To ensure a production-ready interface, Pydantic is used to restructure and validate the final output format. Rather than returning unstructured text, the system maps the LLM's response into a strict schema, enforcing consistent data types for fields like answer content, file citations, and confidence scores.
+
+To see how Semantic Kernel coordinates these operations across your system components, review the workflow below.
+
+<img width="700" height="576" alt="image" src="https://github.com/user-attachments/assets/0383c872-1806-40e4-a9a0-d3d9d874a8ab" />
+
 
 ### 6. PostgreSQL Response Caching layer
 To optimize operational efficiency, the application implements a PostgreSQL Response Caching layer using exact-match logic. 
