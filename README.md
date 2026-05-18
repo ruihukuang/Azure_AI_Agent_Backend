@@ -7,6 +7,9 @@ This app uses a Retrieval-Augmented Generation (RAG) framework to provide pinpoi
 ## Execution steps
 1 Knowledge Base Ingestion & Vector Indexing
 
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/93ee744b-d0d5-4b8b-995d-01c3b1b1cbea" />
+
+
 
 ## Main Techology 
 
