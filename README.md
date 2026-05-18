@@ -13,6 +13,7 @@ This app uses a Retrieval-Augmented Generation (RAG) framework to provide pinpoi
 <img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/98d7ab87-ef69-45bb-bc79-d8518c6b36b8" />
 
 3 
+<img width="777" height="1024" alt="image" src="https://github.com/user-attachments/assets/0ff554b3-cc6d-4d1c-a9d8-4f8e95a9fff7" />
 
 ## Main Techology 
 
