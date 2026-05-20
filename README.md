@@ -5,14 +5,14 @@
 This app uses a Retrieval-Augmented Generation (RAG) framework to provide pinpoint accuracy on product details. To keep information reliable, it only draws from the products folder; if a question isn't product-related, the app will simply let you know it doesn't have the answer.
 
 ## Execution steps
-###1 
+### 1 
 
 <img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/93ee744b-d0d5-4b8b-995d-01c3b1b1cbea" />
 
-###2 
+### 2 
 <img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/98d7ab87-ef69-45bb-bc79-d8518c6b36b8" />
 
-###3 
+### 3 
 <img width="777" height="1024" alt="image" src="https://github.com/user-attachments/assets/0ff554b3-cc6d-4d1c-a9d8-4f8e95a9fff7" />
 
 ## Main Techology 
